@@ -12,29 +12,19 @@
       color: #fff;
       line-height: 1.6;
     }
-
-    a {
-      color: #00bcd4;
-      text-decoration: none;
-    }
-
     header {
       text-align: center;
       padding: 6rem 1rem 3rem;
     }
-
     header h1 {
       font-size: 3rem;
       letter-spacing: 0.15em;
-      text-transform: uppercase;
     }
-
     header p {
       max-width: 600px;
       margin: 1rem auto;
       color: #ccc;
     }
-
     .btn {
       display: inline-block;
       background-color: #00bcd4;
@@ -43,29 +33,18 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 1rem;
     }
-
     section {
       padding: 4rem 1rem;
       max-width: 900px;
       margin: auto;
     }
-
-    section h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
     .features {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
       margin-top: 2rem;
     }
-
     .feature {
       background: #111;
       padding: 1.5rem;
@@ -73,108 +52,10 @@
       width: 260px;
       margin: 1rem;
       text-align: center;
-      border: 1px solid #222;
     }
-
     .feature h3 {
       color: #00bcd4;
-      margin-bottom: 0.6rem;
     }
-
-    .feature p {
-      color: #ccc;
-      font-size: 0.92rem;
-    }
-
-    section#why p,
-    section#about p {
-      color: #ccc;
-      font-size: 0.95rem;
-      max-width: 720px;
-      margin: 0.6rem auto;
-    }
-
-    /* CONTACT SECTION */
-    #contact {
-      text-align: center;
-    }
-
-    .contact-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    .contact-info,
-    .contact-form {
-      background: #111;
-      border-radius: 10px;
-      padding: 1.8rem 1.6rem;
-      border: 1px solid #222;
-      box-sizing: border-box;
-    }
-
-    .contact-info {
-      max-width: 320px;
-      text-align: left;
-    }
-
-    .contact-info p {
-      color: #ccc;
-      font-size: 0.9rem;
-    }
-
-    .contact-form {
-      max-width: 420px;
-      text-align: left;
-      width: 100%;
-    }
-
-    .contact-form label {
-      display: block;
-      font-size: 0.9rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.7rem 0.8rem;
-      margin-bottom: 0.9rem;
-      border-radius: 6px;
-      border: 1px solid #333;
-      background: #050505;
-      color: #fff;
-      font-family: inherit;
-      font-size: 0.9rem;
-      box-sizing: border-box;
-    }
-
-    .contact-form textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .contact-form button {
-      display: inline-block;
-      border: none;
-      background-color: #00bcd4;
-      color: #000;
-      padding: 0.8rem 1.6rem;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .contact-form small {
-      display: block;
-      margin-top: 0.5rem;
-      color: #888;
-      font-size: 0.8rem;
-    }
-
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -183,12 +64,7 @@
       font-size: 0.9rem;
     }
 
-    footer a {
-      color: #00bcd4;
-      text-decoration: none;
-    }
-
-    /* CHATBOT WIDGET */
+    /* Chat widget */
     .chat-toggle-btn {
       position: fixed;
       right: 1.5rem;
@@ -207,11 +83,6 @@
       box-shadow: 0 10px 30px rgba(0, 188, 212, 0.6);
       z-index: 50;
     }
-
-    .chat-toggle-btn span {
-      display: inline-block;
-    }
-
     .chat-widget {
       position: fixed;
       right: 1.5rem;
@@ -227,7 +98,6 @@
       overflow: hidden;
       z-index: 49;
     }
-
     .chat-header {
       padding: 0.8rem 1rem;
       background: #111;
@@ -237,13 +107,6 @@
       justify-content: space-between;
       font-size: 0.9rem;
     }
-
-    .chat-header-left {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
     .chat-avatar {
       width: 26px;
       height: 26px;
@@ -256,73 +119,36 @@
       font-weight: bold;
       color: #000;
     }
-
-    .chat-title {
-      font-weight: bold;
-    }
-
-    .chat-status {
-      font-size: 0.75rem;
-      color: #8bc34a;
-    }
-
-    .chat-close {
-      border: none;
-      background: transparent;
-      color: #aaa;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
     .chat-body {
       padding: 0.8rem 0.9rem;
       max-height: 260px;
       overflow-y: auto;
       font-size: 0.85rem;
     }
-
     .chat-message {
       margin-bottom: 0.6rem;
       display: flex;
     }
-
-    .chat-message.bot {
-      justify-content: flex-start;
-    }
-
-    .chat-message.user {
-      justify-content: flex-end;
-    }
-
+    .chat-message.bot { justify-content: flex-start; }
+    .chat-message.user { justify-content: flex-end; }
     .chat-bubble {
       padding: 0.5rem 0.7rem;
       border-radius: 10px;
       max-width: 80%;
     }
-
     .chat-bubble.bot {
       background: #111;
       border: 1px solid #222;
       color: #eee;
     }
-
     .chat-bubble.user {
       background: #00bcd4;
       color: #000;
     }
-
     .chat-footer {
       padding: 0.6rem 0.9rem 0.8rem;
       border-top: 1px solid #222;
     }
-
-    .chat-footer small {
-      display: block;
-      margin-bottom: 0.4rem;
-      color: #888;
-      font-size: 0.75rem;
-    }
-
     .chat-footer button {
       width: 100%;
       border: none;
@@ -334,204 +160,87 @@
       cursor: pointer;
       font-size: 0.85rem;
     }
-
-    .chat-footer button:hover {
-      background: #05a8bf;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .contact-wrapper {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .chat-widget {
-        right: 0.8rem;
-        bottom: 4.3rem;
-      }
-
-      .chat-toggle-btn {
-        right: 0.8rem;
-        bottom: 1rem;
-      }
-    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>INNOVATIVE AI SOLUTIONS</h1>
+    <h1>Innovative AI Solutions</h1>
     <p>Helping teams save time and reduce admin pressure with smart, custom-built AI chatbots — tailored to your workflow.</p>
     <a href="#services" class="btn">See How It Works</a>
   </header>
 
   <section id="services">
-    <h2>SMART AI ASSISTANTS</h2>
-    <p style="text-align:center; color:#ccc; max-width:640px; margin:0 auto;">
-      ClearPath AI helps clinics and businesses deploy practical AI assistants that automate repetitive questions, admin tasks, and support — so your team can focus on real work.
-    </p>
+    <h2 style="text-align:center;">Smart AI Assistants for Your Clinic</h2>
     <div class="features">
       <div class="feature">
         <h3>🤖 Chat Assistant</h3>
-        <p>Automate FAQs, welcome visitors, and answer common questions 24/7 — in your brand voice and tone.</p>
+        <p>Automate FAQs, welcome patients, and reduce call volume — all with 24/7 AI support.</p>
       </div>
       <div class="feature">
-        <h3>📅 Admin & Booking Support</h3>
-        <p>Handle scheduling, intake questions, and basic admin flows so staff deal only with high-value cases.</p>
+        <h3>📅 Appointment & Admin Bot</h3>
+        <p>Handle scheduling, policy queries, and admin tasks to free up staff and improve efficiency.</p>
       </div>
       <div class="feature">
-        <h3>🧠 Internal Knowledge Bot</h3>
-        <p>Give your team instant answers to SOPs, policies, and training material through an internal AI assistant.</p>
+        <h3>🧠 Staff Training Chatbot</h3>
+        <p>Speed up onboarding with interactive training bots that provide instant access to SOPs and answers.</p>
       </div>
     </div>
   </section>
 
   <section id="why">
-    <h2>WHY CHOOSE CLEARPATH AI?</h2>
-    <p>
-      We focus on clear, practical automations that actually save time — not just flashy tech. Every assistant is tailored
-      to your workflow, language, and goals so it feels like part of your team, not a bolt-on gadget.
-    </p>
-    <p>
-      Our process is simple: understand your operations, map opportunities, build a focused AI assistant, then refine
-      based on real usage. No jargon, no fluff — just measurable results.
-    </p>
+    <h2 style="text-align:center;">Why Choose ClearPath AI?</h2>
+    <p>We help healthcare providers unlock the power of automation with tailored, scalable solutions. Our UK-based team combines cutting-edge AI tech with clear communication and reliable implementation.</p>
+    <p>Partner with us for long-term growth in today’s fast-moving digital world.</p>
   </section>
 
   <section id="about">
-    <h2>WHO WE ARE</h2>
-    <p>
-      ClearPath AI is a UK-based startup focused on intelligent automation and conversational AI.
-      We help lean teams work smarter by offloading repetitive tasks to custom-built AI assistants.
-    </p>
-    <p>
-      Whether you’re running a clinic, online service, or modern business, we support you with strategy, build, and iteration
-      — so you don’t have to “figure out AI” alone.
-    </p>
+    <h2 style="text-align:center;">Who We Are</h2>
+    <p>Founded in 2024, ClearPath AI is a UK-based startup delivering intelligent automation and conversational AI solutions. Our mission is to help businesses streamline operations and reduce admin workload with custom-built AI tools.</p>
   </section>
 
-  <section id="contact">
-    <h2>GET IN TOUCH</h2>
-    <p style="max-width:600px; margin:0.5rem auto; color:#ccc;">
-      Ready to explore AI for your clinic or business? Send a quick message and we’ll follow up with a simple, no-pressure plan.
-    </p>
-
-    <div class="contact-wrapper">
-      <div class="contact-info">
-        <h3>Contact Details</h3>
-        <p><strong>Email:</strong><br>
-          <a href="mailto:edward@clearpathai.uk">edward@clearpathai.uk</a>
-        </p>
-        <p><strong>Location:</strong><br>
-          UK-based · remote friendly
-        </p>
-        <p><strong>Typical response time:</strong><br>
-          Under 24 hours.
-        </p>
-      </div>
-
-      <div class="contact-form">
-        <h3>Send a Message</h3>
-
-        <!-- 
-          FORM NOTE:
-          To make this form send to your email without coding,
-          you can use a free service like Formspree.
-          1. Go to https://formspree.io
-          2. Create a form, copy your form endpoint URL
-          3. Replace "https://formspree.io/f/your-form-id" below with your real URL
-        -->
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required>
-
-          <label for="email">Email</label>
-          <input id="email" name="_replyto" type="email" placeholder="you@example.com" required>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell me a bit about your clinic or project..." required></textarea>
-
-          <button type="submit">Send Message</button>
-          <small>This is a simple contact form. You can replace the backend later with your preferred tool.</small>
-        </form>
-      </div>
-    </div>
+  <section id="contact" style="text-align:center;">
+    <h2>Get in Touch</h2>
+    <p>Email: <a href="mailto:edward@clearpathai.uk">edward@clearpathai.uk</a></p>
   </section>
 
   <footer>
     <p>© 2025 ClearPath AI — Empowering businesses through custom AI automation.</p>
-    <p>Built and managed by ClearPath AI. Contact: <a href="mailto:edward@clearpathai.uk">edward@clearpathai.uk</a></p>
   </footer>
 
-  <!-- CHATBOT DEMO WIDGET -->
-  <button class="chat-toggle-btn" id="chatToggle">
-    <span>💬</span>
-    <span>Chat demo</span>
-  </button>
+  <!-- Chatbot widget -->
+  <button class="chat-toggle-btn" id="chatToggle">💬 Chat Demo</button>
 
   <div class="chat-widget" id="chatWidget">
     <div class="chat-header">
-      <div class="chat-header-left">
-        <div class="chat-avatar">CP</div>
-        <div>
-          <div class="chat-title">ClearPath AI Assistant</div>
-          <div class="chat-status">Online · demo</div>
-        </div>
-      </div>
-      <button class="chat-close" id="chatClose">×</button>
+      <div class="chat-avatar">CP</div>
+      <div>ClearPath AI Assistant</div>
     </div>
     <div class="chat-body">
-      <div class="chat-message bot">
-        <div class="chat-bubble bot">
-          Hi there 👋 I’m your AI assistant from ClearPath AI.<br>
-          I can answer FAQs, help with bookings, and capture new enquiries 24/7.
-        </div>
-      </div>
-      <div class="chat-message user">
-        <div class="chat-bubble user">
-          Can you help reduce our admin workload?
-        </div>
-      </div>
-      <div class="chat-message bot">
-        <div class="chat-bubble bot">
-          Absolutely. We’ll map your current processes and build a custom assistant to handle common
-          questions & tasks — so your team can focus on patients and high-value work.
-        </div>
-      </div>
-      <div class="chat-message bot">
-        <div class="chat-bubble bot">
-          Want to see what this could look like for your clinic?<br>
-          Click the button below to contact Edward at ClearPath AI.
-        </div>
-      </div>
+      <div class="chat-message bot"><div class="chat-bubble bot">
+        Hi 👋 I'm ClearPath AI — here to show you what an AI assistant could look like!
+      </div></div>
+      <div class="chat-message user"><div class="chat-bubble user">
+        What can you do?
+      </div></div>
+      <div class="chat-message bot"><div class="chat-bubble bot">
+        I can automate admin work, handle FAQs, and schedule appointments — saving you time.
+      </div></div>
+      <div class="chat-message bot"><div class="chat-bubble bot">
+        Want to talk to the real team? Click below 👇
+      </div></div>
     </div>
     <div class="chat-footer">
-      <small>This is a demo preview. For a real assistant, ClearPath AI connects it to your tools.</small>
-      <button onclick="window.location.href='mailto:edward@clearpathai.uk?subject=AI%20assistant%20enquiry&body=Hi%20Edward,%20I%27d%20like%20to%20learn%20more%20about%20an%20AI%20assistant%20for%20my%20business.'">
-        Contact ClearPath AI
-      </button>
+      <button onclick="window.location.href='mailto:edward@clearpathai.uk?subject=AI%20assistant%20enquiry'">Contact ClearPath AI</button>
     </div>
   </div>
 
   <script>
-    // Chat widget toggle
-    const chatToggle = document.getElementById('chatToggle');
-    const chatWidget = document.getElementById('chatWidget');
-    const chatClose = document.getElementById('chatClose');
-
-    chatToggle.addEventListener('click', () => {
-      const isVisible = chatWidget.style.display === 'flex';
-      chatWidget.style.display = isVisible ? 'none' : 'flex';
-    });
-
-    chatClose.addEventListener('click', () => {
-      chatWidget.style.display = 'none';
+    const toggle = document.getElementById('chatToggle');
+    const widget = document.getElementById('chatWidget');
+    toggle.addEventListener('click', () => {
+      widget.style.display = widget.style.display === 'flex' ? 'none' : 'flex';
+      widget.style.flexDirection = 'column';
     });
   </script>
 
