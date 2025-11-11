@@ -12,19 +12,23 @@
       color: #fff;
       line-height: 1.6;
     }
+
     header {
       text-align: center;
       padding: 6rem 1rem 3rem;
     }
+
     header h1 {
       font-size: 3rem;
       letter-spacing: 0.15em;
     }
+
     header p {
       max-width: 600px;
       margin: 1rem auto;
       color: #ccc;
     }
+
     .btn {
       display: inline-block;
       background-color: #00bcd4;
@@ -34,17 +38,20 @@
       text-decoration: none;
       font-weight: bold;
     }
+
     section {
       padding: 4rem 1rem;
       max-width: 900px;
       margin: auto;
     }
+
     .features {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
       margin-top: 2rem;
     }
+
     .feature {
       background: #111;
       padding: 1.5rem;
@@ -53,9 +60,11 @@
       margin: 1rem;
       text-align: center;
     }
+
     .feature h3 {
       color: #00bcd4;
     }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -64,101 +73,9 @@
       font-size: 0.9rem;
     }
 
-    /* Chat widget */
-    .chat-toggle-btn {
-      position: fixed;
-      right: 1.5rem;
-      bottom: 1.5rem;
-      background-color: #00bcd4;
-      color: #000;
-      border-radius: 999px;
-      padding: 0.7rem 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.9rem;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0, 188, 212, 0.6);
-      z-index: 50;
-    }
-    .chat-widget {
-      position: fixed;
-      right: 1.5rem;
-      bottom: 4.5rem;
-      width: 320px;
-      max-width: calc(100% - 2rem);
-      background: #050505;
-      border-radius: 12px;
-      border: 1px solid #222;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 49;
-    }
-    .chat-header {
-      padding: 0.8rem 1rem;
-      background: #111;
-      border-bottom: 1px solid #222;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.9rem;
-    }
-    .chat-avatar {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 20% 20%, #00bcd4, #006064);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: bold;
-      color: #000;
-    }
-    .chat-body {
-      padding: 0.8rem 0.9rem;
-      max-height: 260px;
-      overflow-y: auto;
-      font-size: 0.85rem;
-    }
-    .chat-message {
-      margin-bottom: 0.6rem;
-      display: flex;
-    }
-    .chat-message.bot { justify-content: flex-start; }
-    .chat-message.user { justify-content: flex-end; }
-    .chat-bubble {
-      padding: 0.5rem 0.7rem;
-      border-radius: 10px;
-      max-width: 80%;
-    }
-    .chat-bubble.bot {
-      background: #111;
-      border: 1px solid #222;
-      color: #eee;
-    }
-    .chat-bubble.user {
-      background: #00bcd4;
-      color: #000;
-    }
-    .chat-footer {
-      padding: 0.6rem 0.9rem 0.8rem;
-      border-top: 1px solid #222;
-    }
-    .chat-footer button {
-      width: 100%;
-      border: none;
-      border-radius: 8px;
-      padding: 0.65rem;
-      background: #00bcd4;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 0.85rem;
+    footer a {
+      color: #00bcd4;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -167,7 +84,7 @@
   <header>
     <h1>Innovative AI Solutions</h1>
     <p>Helping teams save time and reduce admin pressure with smart, custom-built AI chatbots — tailored to your workflow.</p>
-    <a href="#services" class="btn">See How It Works</a>
+    <a href="#contact" class="btn">See How It Works</a>
   </header>
 
   <section id="services">
@@ -208,41 +125,6 @@
     <p>© 2025 ClearPath AI — Empowering businesses through custom AI automation.</p>
   </footer>
 
-  <!-- Chatbot widget -->
-  <button class="chat-toggle-btn" id="chatToggle">💬 Chat Demo</button>
-
-  <div class="chat-widget" id="chatWidget">
-    <div class="chat-header">
-      <div class="chat-avatar">CP</div>
-      <div>ClearPath AI Assistant</div>
-    </div>
-    <div class="chat-body">
-      <div class="chat-message bot"><div class="chat-bubble bot">
-        Hi 👋 I'm ClearPath AI — here to show you what an AI assistant could look like!
-      </div></div>
-      <div class="chat-message user"><div class="chat-bubble user">
-        What can you do?
-      </div></div>
-      <div class="chat-message bot"><div class="chat-bubble bot">
-        I can automate admin work, handle FAQs, and schedule appointments — saving you time.
-      </div></div>
-      <div class="chat-message bot"><div class="chat-bubble bot">
-        Want to talk to the real team? Click below 👇
-      </div></div>
-    </div>
-    <div class="chat-footer">
-      <button onclick="window.location.href='mailto:edward@clearpathai.uk?subject=AI%20assistant%20enquiry'">Contact ClearPath AI</button>
-    </div>
-  </div>
-
-  <script>
-    const toggle = document.getElementById('chatToggle');
-    const widget = document.getElementById('chatWidget');
-    toggle.addEventListener('click', () => {
-      widget.style.display = widget.style.display === 'flex' ? 'none' : 'flex';
-      widget.style.flexDirection = 'column';
-    });
-  </script>
-
 </body>
 </html>
+
