@@ -1,12 +1,755 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClearPath AI Test</title>
+  <meta charset="UTF-8" />
+  <title>ClearPath AI – Innovative AI Solutions for Clinics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ClearPath AI builds custom AI assistants that automate FAQs, reduce admin overload, and boost patient experience for clinics and healthcare teams.">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #050507;
+      --bg-section: #111218;
+      --accent: #22e4c5;
+      --accent-soft: rgba(34, 228, 197, 0.12);
+      --text-main: #f7f7f7;
+      --text-muted: #aaaaaa;
+      --card-bg: #151722;
+      --border-subtle: #2b2d3a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout helpers */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(5, 5, 7, 0.9);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .logo-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 20%, #41ffe0, #007bff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      transition: color 0.2s ease, transform 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-size: 0.9rem;
+      color: var(--accent);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #020305;
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 4.5rem 0 4rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 4vw, 3.4rem);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-primary {
+      padding: 0.8rem 1.7rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #020305;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 0 32px rgba(34, 228, 197, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 40px rgba(34, 228, 197, 0.5);
+      background: #17d3b6;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-stats-strip {
+      margin-top: 1rem;
+      padding: 0.9rem 1.1rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, rgba(34, 228, 197, 0.24), rgba(11, 15, 32, 0.9));
+      font-size: 0.9rem;
+      color: #f4f4f4;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .hero-stats-strip span {
+      white-space: nowrap;
+    }
+
+    .dot {
+      color: rgba(255, 255, 255, 0.35);
+      margin: 0 0.4rem;
+    }
+
+    .hero-image-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      min-height: 320px;
+      display: flex;
+      align-items: stretch;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+    }
+
+    .hero-image-inner {
+      flex: 1;
+      background-image:
+        linear-gradient(to top, rgba(2, 4, 20, 0.4), rgba(2, 6, 23, 0.9)),
+        url("https://images.pexels.com/photos/1181579/pexels-photo-1181579.jpeg?auto=compress&cs=tinysrgb&w=1200");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 1.6rem;
+      left: 1.6rem;
+      padding: 0.75rem 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .hero-badge span:first-child {
+      color: var(--accent);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .hero-badge span:last-child {
+      color: var(--text-muted);
+    }
+
+    /* SECTION WRAPPERS */
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-dark {
+      background: var(--bg-section);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.6rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 34rem;
+      margin: 0 auto;
+    }
+
+    /* SERVICES / FEATURES */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.7rem 1.5rem 1.6rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .feature-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .feature-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* WHY SECTION */
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .split-image {
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 260px;
+      background-image:
+        linear-gradient(to top, rgba(15,23,42,0.8), rgba(15,23,42,0.4)),
+        url("https://images.pexels.com/photos/37347/office-freelancer-computer-business-37347.jpeg?auto=compress&cs=tinysrgb&w=1200");
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.7);
+    }
+
+    .split-content h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .split-content p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .split-list {
+      list-style: none;
+      margin-top: 0.6rem;
+    }
+
+    .split-list li {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .split-list li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 0.4rem;
+    }
+
+    /* ABOUT / JOURNEY */
+    .about-text {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .about-text strong {
+      color: var(--text-main);
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      padding: 1.8rem 1.6rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .contact-card h3 {
+      font-size: 1.4rem;
+    }
+
+    .contact-card p {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+
+    .contact-email {
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+    }
+
+    .contact-email a {
+      color: var(--accent);
+    }
+
+    .contact-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2.6rem 0 1.8rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+      font-size: 0.9rem;
+    }
+
+    .footer-brand {
+      max-width: 420px;
+    }
+
+    .footer-brand strong {
+      font-style: italic;
+    }
+
+    .footer-right {
+      text-align: right;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
+    .footer-links {
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-links a {
+      margin-left: 1rem;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* FLOATING CHAT BUTTON */
+    .chat-button {
+      position: fixed;
+      right: 1.4rem;
+      bottom: 1.4rem;
+      background: var(--accent);
+      color: #020305;
+      border-radius: 999px;
+      padding: 0.8rem 1.3rem;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 12px 30px rgba(34, 228, 197, 0.42);
+      cursor: pointer;
+      border: none;
+      z-index: 30;
+    }
+
+    .chat-button span {
+      display: inline-block;
+    }
+
+    .chat-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 38px rgba(34, 228, 197, 0.7);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .split,
+      .features-grid,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3.4rem;
+      }
+
+      .hero-grid {
+        gap: 2.4rem;
+      }
+
+      .hero-image-card {
+        min-height: 260px;
+      }
+
+      .footer-right {
+        text-align: left;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        letter-spacing: 0.08em;
+      }
+
+      .hero-stats-strip {
+        border-radius: 16px;
+      }
+
+      section {
+        padding: 3.2rem 0;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Arial; text-align: center; padding-top: 50px;">
-  <h1>🚀 ClearPath AI Test Page</h1>
-  <p>If you see this, your GitHub Pages setup works!</p>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="logo">
+          <div class="logo-mark">CP</div>
+          <span>ClearPath AI</span>
+        </div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#why">Why Us</a>
+          <a href="#about">About</a>
+        </div>
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Contact
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-kicker">Healthcare AI Automation</div>
+        <h1 class="hero-title">Innovative AI Solutions</h1>
+        <p class="hero-subtitle">
+          We help clinics and healthcare teams save time and reduce pressure by automating patient FAQs,
+          support, and onboarding with smart, custom-built AI assistants tailored to your workflow.
+        </p>
+        <div class="hero-cta-row">
+          <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+            See How It Works
+          </button>
+          <span class="hero-note">Book a no-pressure discovery call in minutes.</span>
+        </div>
+
+        <div class="hero-stats-strip">
+          <span>AI-Powered FAQ Automation</span><span class="dot">•</span>
+          <span>Reduce Admin Overload</span><span class="dot">•</span>
+          <span>Boost Patient Experience</span><span class="dot">•</span>
+          <span>24/7 Chatbot Support</span><span class="dot">•</span>
+          <span>Fast Onboarding</span>
+        </div>
+      </div>
+
+      <div class="hero-image-card">
+        <div class="hero-image-inner"></div>
+        <div class="hero-badge">
+          <span>Live AI Assistant</span>
+          <span>Answers patient questions, screens enquiries, and routes leads to your team.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / SMART ASSISTANTS -->
+  <section id="services" class="section-dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">For Modern Clinics</div>
+        <h2 class="section-title">Smart AI Assistants for Your Clinic</h2>
+        <p class="section-subtitle">
+          Automate patient FAQs, improve onboarding, and reduce staff workload with AI chatbots
+          customized for healthcare teams.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <div class="feature-title">Patient FAQ Chat Assistant</div>
+          <p class="feature-text">
+            Welcome new patients with clear next steps, answer common questions, and reduce call
+            volume with 24/7 support — all in your clinic’s voice and tone.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <div class="feature-title">Appointments & Admin Bot</div>
+          <p class="feature-text">
+            Handle routine admin like scheduling, reminders, policy queries, and document collection.
+            Free up front-desk staff to focus on the patients who need real attention.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+          <div class="feature-title">Staff Training Chatbot</div>
+          <p class="feature-text">
+            Speed up onboarding with guided answers, SOP explanations, and instant access to internal
+            knowledge — directly inside a conversational AI assistant.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE CLEARPATH -->
+  <section id="why">
+    <div class="container split">
+      <div class="split-image"></div>
+      <div class="split-content">
+        <h3>Why Choose ClearPath AI?</h3>
+        <p>
+          ClearPath AI helps healthcare providers unlock the power of automation with tailored,
+          scalable solutions. We combine cutting-edge AI tech with clear communication and reliable
+          implementation.
+        </p>
+        <p>
+          We don’t just deliver tools — we deliver outcomes. That means better patient experiences,
+          reduced staff burnout, and more capacity for revenue-generating work.
+        </p>
+        <ul class="split-list">
+          <li>Strategy first: we begin with your processes, not our tools.</li>
+          <li>Done-for-you setup, training, and iteration.</li>
+          <li>Privacy-aware workflows designed around your compliance needs.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / JOURNEY -->
+  <section id="about" class="section-dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Who We Are</div>
+        <h2 class="section-title">Our AI Journey</h2>
+      </div>
+      <p class="about-text">
+        Founded in 2024, <strong>ClearPath AI</strong> is a UK-based startup focused on intelligent
+        automation, conversational AI, and data-driven decision support.
+        Our mission is simple: help teams streamline operations, reduce admin pressure, and unlock
+        smarter decision-making through custom-built AI assistants.
+        <br><br>
+        We’re passionate about pairing practical automation with human-centric design — so your staff
+        stay in control while AI handles the repetitive work in the background.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <h3>Ready to streamline your clinic with AI?</h3>
+        <p>
+          Let’s chat about automating your FAQs, admin tasks, and support processes. Tell us a bit
+          about your clinic and we’ll propose a simple, no-jargon automation plan.
+        </p>
+        <div class="contact-email">
+          Email us directly:
+          <br>
+          <a href="mailto:edward@clearpathai.uk">edward@clearpathai.uk</a>
+        </div>
+        <div class="contact-meta">
+          Typical response time: under 24 hours.  
+          Remote-first, UK-based.
+        </div>
+      </div>
+      <div>
+        <p style="color: var(--text-muted); font-size:0.9rem;">
+          Prefer a form? You can later integrate a form service (like Tally, Typeform, or HubSpot)
+          and embed it here, or plug in a chatbot widget that routes messages straight to your inbox.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p><strong>ClearPath AI</strong></p>
+        <p>Empowering businesses and clinics through custom AI automation.</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="#top">Home</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div>United Kingdom · <a href="mailto:edward@clearpathai.uk">edward@clearpathai.uk</a></div>
+        <div style="margin-top:0.2rem;">© <span id="year"></span> ClearPath AI. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating chat button (currently opens email) -->
+  <button class="chat-button" onclick="window.location.href='mailto:edward@clearpathai.uk?subject=Let%27s%20talk%20about%20AI%20automation'">
+    <span>💬</span> <span>Let’s Chat</span>
+  </button>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
