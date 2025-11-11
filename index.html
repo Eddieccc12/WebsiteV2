@@ -1,754 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ClearPath AI – Innovative AI Solutions for Clinics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="ClearPath AI builds custom AI assistants that automate FAQs, reduce admin overload, and boost patient experience for clinics and healthcare teams.">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClearPath AI | Innovative AI Solutions</title>
   <style>
-    :root {
-      --bg-dark: #050507;
-      --bg-section: #111218;
-      --accent: #22e4c5;
-      --accent-soft: rgba(34, 228, 197, 0.12);
-      --text-main: #f7f7f7;
-      --text-muted: #aaaaaa;
-      --card-bg: #151722;
-      --border-subtle: #2b2d3a;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: "Poppins", sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-main);
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: inherit;
+      color: #00bcd4;
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* Layout helpers */
-    .container {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* NAVBAR */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(12px);
-      background: rgba(5, 5, 7, 0.9);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
-
-    .logo-mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 20% 20%, #41ffe0, #007bff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      transition: color 0.2s ease, transform 0.15s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    .nav-cta {
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      font-size: 0.9rem;
-      color: var(--accent);
-      background: transparent;
-      cursor: pointer;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
-    }
-
-    .nav-cta:hover {
-      background: var(--accent);
-      color: #020305;
-      transform: translateY(-1px);
-    }
-
-    /* HERO */
-    .hero {
-      padding: 4.5rem 0 4rem;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 3.5rem;
-      align-items: center;
-    }
-
-    .hero-kicker {
-      font-size: 0.9rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.6rem, 4vw, 3.4rem);
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      max-width: 34rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .btn-primary {
-      padding: 0.8rem 1.7rem;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #020305;
-      border: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      cursor: pointer;
-      box-shadow: 0 0 32px rgba(34, 228, 197, 0.35);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 40px rgba(34, 228, 197, 0.5);
-      background: #17d3b6;
-    }
-
-    .hero-note {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .hero-stats-strip {
-      margin-top: 1rem;
-      padding: 0.9rem 1.1rem;
-      border-radius: 999px;
-      background: radial-gradient(circle at 0 0, rgba(34, 228, 197, 0.24), rgba(11, 15, 32, 0.9));
-      font-size: 0.9rem;
-      color: #f4f4f4;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-    }
-
-    .hero-stats-strip span {
-      white-space: nowrap;
-    }
-
-    .dot {
-      color: rgba(255, 255, 255, 0.35);
-      margin: 0 0.4rem;
-    }
-
-    .hero-image-card {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      background: radial-gradient(circle at top, #1e293b, #020617);
-      min-height: 320px;
-      display: flex;
-      align-items: stretch;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
-    }
-
-    .hero-image-inner {
-      flex: 1;
-      background-image:
-        linear-gradient(to top, rgba(2, 4, 20, 0.4), rgba(2, 6, 23, 0.9)),
-        url("https://images.pexels.com/photos/1181579/pexels-photo-1181579.jpeg?auto=compress&cs=tinysrgb&w=1200");
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-badge {
-      position: absolute;
-      bottom: 1.6rem;
-      left: 1.6rem;
-      padding: 0.75rem 1rem;
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      font-size: 0.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .hero-badge span:first-child {
-      color: var(--accent);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .hero-badge span:last-child {
-      color: var(--text-muted);
-    }
-
-    /* SECTION WRAPPERS */
-    section {
-      padding: 4rem 0;
-    }
-
-    .section-dark {
-      background: var(--bg-section);
-    }
-
-    .section-header {
       text-align: center;
-      margin-bottom: 2.6rem;
+      padding: 6rem 1rem 3rem;
     }
 
-    .section-kicker {
-      font-size: 0.8rem;
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
     }
 
-    .section-title {
-      font-size: 2rem;
-      font-weight: 600;
+    header p {
+      max-width: 600px;
+      margin: 1rem auto;
+      color: #ccc;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #00bcd4;
+      color: #000;
+      padding: 0.8rem 1.6rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    section {
+      padding: 4rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 2rem;
+    }
+
+    .feature {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 260px;
+      margin: 1rem;
+      text-align: center;
+      border: 1px solid #222;
+    }
+
+    .feature h3 {
+      color: #00bcd4;
       margin-bottom: 0.6rem;
     }
 
-    .section-subtitle {
-      color: var(--text-muted);
+    .feature p {
+      color: #ccc;
+      font-size: 0.92rem;
+    }
+
+    section#why p,
+    section#about p {
+      color: #ccc;
       font-size: 0.95rem;
-      max-width: 34rem;
-      margin: 0 auto;
+      max-width: 720px;
+      margin: 0.6rem auto;
     }
 
-    /* SERVICES / FEATURES */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.8rem;
+    /* CONTACT SECTION */
+    #contact {
+      text-align: center;
     }
 
-    .feature-card {
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 1.7rem 1.5rem 1.6rem;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+    .contact-wrapper {
       display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .feature-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
-
-    .feature-title {
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-
-    .feature-text {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* WHY SECTION */
-    .split {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .split-image {
-      border-radius: 24px;
-      overflow: hidden;
-      min-height: 260px;
-      background-image:
-        linear-gradient(to top, rgba(15,23,42,0.8), rgba(15,23,42,0.4)),
-        url("https://images.pexels.com/photos/37347/office-freelancer-computer-business-37347.jpeg?auto=compress&cs=tinysrgb&w=1200");
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.7);
-    }
-
-    .split-content h3 {
-      font-size: 1.6rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .split-content p {
-      font-size: 0.94rem;
-      color: var(--text-muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .split-list {
-      list-style: none;
-      margin-top: 0.6rem;
-    }
-
-    .split-list li {
-      font-size: 0.9rem;
-      color: var(--text-main);
-      margin-bottom: 0.4rem;
-    }
-
-    .split-list li::before {
-      content: "•";
-      color: var(--accent);
-      margin-right: 0.4rem;
-    }
-
-    /* ABOUT / JOURNEY */
-    .about-text {
-      max-width: 640px;
-      margin: 0 auto;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    .about-text strong {
-      color: var(--text-main);
-    }
-
-    /* CONTACT */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .contact-card {
-      background: var(--card-bg);
-      padding: 1.8rem 1.6rem;
-      border-radius: 20px;
-      border: 1px solid var(--border-subtle);
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-    }
-
-    .contact-card h3 {
-      font-size: 1.4rem;
-    }
-
-    .contact-card p {
-      font-size: 0.93rem;
-      color: var(--text-muted);
-    }
-
-    .contact-email {
-      font-size: 0.95rem;
-      margin-top: 0.3rem;
-    }
-
-    .contact-email a {
-      color: var(--accent);
-    }
-
-    .contact-meta {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border-subtle);
-      padding: 2.6rem 0 1.8rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      flex-wrap: wrap;
       gap: 2rem;
-      align-items: start;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .contact-info,
+    .contact-form {
+      background: #111;
+      border-radius: 10px;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid #222;
+      box-sizing: border-box;
+    }
+
+    .contact-info {
+      max-width: 320px;
+      text-align: left;
+    }
+
+    .contact-info p {
+      color: #ccc;
       font-size: 0.9rem;
     }
 
-    .footer-brand {
+    .contact-form {
       max-width: 420px;
+      text-align: left;
+      width: 100%;
     }
 
-    .footer-brand strong {
-      font-style: italic;
-    }
-
-    .footer-right {
-      text-align: right;
-      color: var(--text-muted);
-      font-size: 0.86rem;
-    }
-
-    .footer-links {
-      margin-bottom: 0.4rem;
-    }
-
-    .footer-links a {
-      margin-left: 1rem;
-      color: var(--text-muted);
-      font-size: 0.86rem;
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-
-    /* FLOATING CHAT BUTTON */
-    .chat-button {
-      position: fixed;
-      right: 1.4rem;
-      bottom: 1.4rem;
-      background: var(--accent);
-      color: #020305;
-      border-radius: 999px;
-      padding: 0.8rem 1.3rem;
+    .contact-form label {
+      display: block;
       font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.7rem 0.8rem;
+      margin-bottom: 0.9rem;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background: #050505;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      display: inline-block;
+      border: none;
+      background-color: #00bcd4;
+      color: #000;
+      padding: 0.8rem 1.6rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contact-form small {
+      display: block;
+      margin-top: 0.5rem;
+      color: #888;
+      font-size: 0.8rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    /* CHATBOT WIDGET */
+    .chat-toggle-btn {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      background-color: #00bcd4;
+      color: #000;
+      border-radius: 999px;
+      padding: 0.7rem 1.1rem;
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      box-shadow: 0 12px 30px rgba(34, 228, 197, 0.42);
-      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: bold;
       border: none;
-      z-index: 30;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 188, 212, 0.6);
+      z-index: 50;
     }
 
-    .chat-button span {
+    .chat-toggle-btn span {
       display: inline-block;
     }
 
-    .chat-button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 38px rgba(34, 228, 197, 0.7);
+    .chat-widget {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 4.5rem;
+      width: 320px;
+      max-width: calc(100% - 2rem);
+      background: #050505;
+      border-radius: 12px;
+      border: 1px solid #222;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 49;
+    }
+
+    .chat-header {
+      padding: 0.8rem 1rem;
+      background: #111;
+      border-bottom: 1px solid #222;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .chat-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .chat-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 20% 20%, #00bcd4, #006064);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .chat-title {
+      font-weight: bold;
+    }
+
+    .chat-status {
+      font-size: 0.75rem;
+      color: #8bc34a;
+    }
+
+    .chat-close {
+      border: none;
+      background: transparent;
+      color: #aaa;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .chat-body {
+      padding: 0.8rem 0.9rem;
+      max-height: 260px;
+      overflow-y: auto;
+      font-size: 0.85rem;
+    }
+
+    .chat-message {
+      margin-bottom: 0.6rem;
+      display: flex;
+    }
+
+    .chat-message.bot {
+      justify-content: flex-start;
+    }
+
+    .chat-message.user {
+      justify-content: flex-end;
+    }
+
+    .chat-bubble {
+      padding: 0.5rem 0.7rem;
+      border-radius: 10px;
+      max-width: 80%;
+    }
+
+    .chat-bubble.bot {
+      background: #111;
+      border: 1px solid #222;
+      color: #eee;
+    }
+
+    .chat-bubble.user {
+      background: #00bcd4;
+      color: #000;
+    }
+
+    .chat-footer {
+      padding: 0.6rem 0.9rem 0.8rem;
+      border-top: 1px solid #222;
+    }
+
+    .chat-footer small {
+      display: block;
+      margin-bottom: 0.4rem;
+      color: #888;
+      font-size: 0.75rem;
+    }
+
+    .chat-footer button {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 0.65rem;
+      background: #00bcd4;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .chat-footer button:hover {
+      background: #05a8bf;
     }
 
     /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero-grid,
-      .split,
-      .features-grid,
-      .contact-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
       }
 
-      .hero {
-        padding-top: 3.4rem;
+      .contact-wrapper {
+        flex-direction: column;
+        align-items: stretch;
       }
 
-      .hero-grid {
-        gap: 2.4rem;
+      .chat-widget {
+        right: 0.8rem;
+        bottom: 4.3rem;
       }
 
-      .hero-image-card {
-        min-height: 260px;
-      }
-
-      .footer-right {
-        text-align: left;
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero-title {
-        letter-spacing: 0.08em;
-      }
-
-      .hero-stats-strip {
-        border-radius: 16px;
-      }
-
-      section {
-        padding: 3.2rem 0;
+      .chat-toggle-btn {
+        right: 0.8rem;
+        bottom: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER / NAV -->
   <header>
-    <div class="container">
-      <div class="nav">
-        <div class="logo">
-          <div class="logo-mark">CP</div>
-          <span>ClearPath AI</span>
-        </div>
-        <div class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#why">Why Us</a>
-          <a href="#about">About</a>
-        </div>
-        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-          Contact
-        </button>
-      </div>
-    </div>
+    <h1>INNOVATIVE AI SOLUTIONS</h1>
+    <p>Helping teams save time and reduce admin pressure with smart, custom-built AI chatbots — tailored to your workflow.</p>
+    <a href="#services" class="btn">See How It Works</a>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="hero-kicker">Healthcare AI Automation</div>
-        <h1 class="hero-title">Innovative AI Solutions</h1>
-        <p class="hero-subtitle">
-          We help clinics and healthcare teams save time and reduce pressure by automating patient FAQs,
-          support, and onboarding with smart, custom-built AI assistants tailored to your workflow.
-        </p>
-        <div class="hero-cta-row">
-          <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
-            See How It Works
-          </button>
-          <span class="hero-note">Book a no-pressure discovery call in minutes.</span>
-        </div>
-
-        <div class="hero-stats-strip">
-          <span>AI-Powered FAQ Automation</span><span class="dot">•</span>
-          <span>Reduce Admin Overload</span><span class="dot">•</span>
-          <span>Boost Patient Experience</span><span class="dot">•</span>
-          <span>24/7 Chatbot Support</span><span class="dot">•</span>
-          <span>Fast Onboarding</span>
-        </div>
+  <section id="services">
+    <h2>SMART AI ASSISTANTS</h2>
+    <p style="text-align:center; color:#ccc; max-width:640px; margin:0 auto;">
+      ClearPath AI helps clinics and businesses deploy practical AI assistants that automate repetitive questions, admin tasks, and support — so your team can focus on real work.
+    </p>
+    <div class="features">
+      <div class="feature">
+        <h3>🤖 Chat Assistant</h3>
+        <p>Automate FAQs, welcome visitors, and answer common questions 24/7 — in your brand voice and tone.</p>
       </div>
-
-      <div class="hero-image-card">
-        <div class="hero-image-inner"></div>
-        <div class="hero-badge">
-          <span>Live AI Assistant</span>
-          <span>Answers patient questions, screens enquiries, and routes leads to your team.</span>
-        </div>
+      <div class="feature">
+        <h3>📅 Admin & Booking Support</h3>
+        <p>Handle scheduling, intake questions, and basic admin flows so staff deal only with high-value cases.</p>
+      </div>
+      <div class="feature">
+        <h3>🧠 Internal Knowledge Bot</h3>
+        <p>Give your team instant answers to SOPs, policies, and training material through an internal AI assistant.</p>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES / SMART ASSISTANTS -->
-  <section id="services" class="section-dark">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-kicker">For Modern Clinics</div>
-        <h2 class="section-title">Smart AI Assistants for Your Clinic</h2>
-        <p class="section-subtitle">
-          Automate patient FAQs, improve onboarding, and reduce staff workload with AI chatbots
-          customized for healthcare teams.
-        </p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">💬</div>
-          <div class="feature-title">Patient FAQ Chat Assistant</div>
-          <p class="feature-text">
-            Welcome new patients with clear next steps, answer common questions, and reduce call
-            volume with 24/7 support — all in your clinic’s voice and tone.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">📅</div>
-          <div class="feature-title">Appointments & Admin Bot</div>
-          <p class="feature-text">
-            Handle routine admin like scheduling, reminders, policy queries, and document collection.
-            Free up front-desk staff to focus on the patients who need real attention.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🎓</div>
-          <div class="feature-title">Staff Training Chatbot</div>
-          <p class="feature-text">
-            Speed up onboarding with guided answers, SOP explanations, and instant access to internal
-            knowledge — directly inside a conversational AI assistant.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE CLEARPATH -->
   <section id="why">
-    <div class="container split">
-      <div class="split-image"></div>
-      <div class="split-content">
-        <h3>Why Choose ClearPath AI?</h3>
-        <p>
-          ClearPath AI helps healthcare providers unlock the power of automation with tailored,
-          scalable solutions. We combine cutting-edge AI tech with clear communication and reliable
-          implementation.
-        </p>
-        <p>
-          We don’t just deliver tools — we deliver outcomes. That means better patient experiences,
-          reduced staff burnout, and more capacity for revenue-generating work.
-        </p>
-        <ul class="split-list">
-          <li>Strategy first: we begin with your processes, not our tools.</li>
-          <li>Done-for-you setup, training, and iteration.</li>
-          <li>Privacy-aware workflows designed around your compliance needs.</li>
-        </ul>
-      </div>
-    </div>
+    <h2>WHY CHOOSE CLEARPATH AI?</h2>
+    <p>
+      We focus on clear, practical automations that actually save time — not just flashy tech. Every assistant is tailored
+      to your workflow, language, and goals so it feels like part of your team, not a bolt-on gadget.
+    </p>
+    <p>
+      Our process is simple: understand your operations, map opportunities, build a focused AI assistant, then refine
+      based on real usage. No jargon, no fluff — just measurable results.
+    </p>
   </section>
 
-  <!-- ABOUT / JOURNEY -->
-  <section id="about" class="section-dark">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-kicker">Who We Are</div>
-        <h2 class="section-title">Our AI Journey</h2>
-      </div>
-      <p class="about-text">
-        Founded in 2024, <strong>ClearPath AI</strong> is a UK-based startup focused on intelligent
-        automation, conversational AI, and data-driven decision support.
-        Our mission is simple: help teams streamline operations, reduce admin pressure, and unlock
-        smarter decision-making through custom-built AI assistants.
-        <br><br>
-        We’re passionate about pairing practical automation with human-centric design — so your staff
-        stay in control while AI handles the repetitive work in the background.
-      </p>
-    </div>
+  <section id="about">
+    <h2>WHO WE ARE</h2>
+    <p>
+      ClearPath AI is a UK-based startup focused on intelligent automation and conversational AI.
+      We help lean teams work smarter by offloading repetitive tasks to custom-built AI assistants.
+    </p>
+    <p>
+      Whether you’re running a clinic, online service, or modern business, we support you with strategy, build, and iteration
+      — so you don’t have to “figure out AI” alone.
+    </p>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
-    <div class="container contact-grid">
-      <div class="contact-card">
-        <h3>Ready to streamline your clinic with AI?</h3>
-        <p>
-          Let’s chat about automating your FAQs, admin tasks, and support processes. Tell us a bit
-          about your clinic and we’ll propose a simple, no-jargon automation plan.
-        </p>
-        <div class="contact-email">
-          Email us directly:
-          <br>
+    <h2>GET IN TOUCH</h2>
+    <p style="max-width:600px; margin:0.5rem auto; color:#ccc;">
+      Ready to explore AI for your clinic or business? Send a quick message and we’ll follow up with a simple, no-pressure plan.
+    </p>
+
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>Contact Details</h3>
+        <p><strong>Email:</strong><br>
           <a href="mailto:edward@clearpathai.uk">edward@clearpathai.uk</a>
-        </div>
-        <div class="contact-meta">
-          Typical response time: under 24 hours.  
-          Remote-first, UK-based.
-        </div>
-      </div>
-      <div>
-        <p style="color: var(--text-muted); font-size:0.9rem;">
-          Prefer a form? You can later integrate a form service (like Tally, Typeform, or HubSpot)
-          and embed it here, or plug in a chatbot widget that routes messages straight to your inbox.
         </p>
+        <p><strong>Location:</strong><br>
+          UK-based · remote friendly
+        </p>
+        <p><strong>Typical response time:</strong><br>
+          Under 24 hours.
+        </p>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+
+        <!-- 
+          FORM NOTE:
+          To make this form send to your email without coding,
+          you can use a free service like Formspree.
+          1. Go to https://formspree.io
+          2. Create a form, copy your form endpoint URL
+          3. Replace "https://formspree.io/f/your-form-id" below with your real URL
+        -->
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="_replyto" type="email" placeholder="you@example.com" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me a bit about your clinic or project..." required></textarea>
+
+          <button type="submit">Send Message</button>
+          <small>This is a simple contact form. You can replace the backend later with your preferred tool.</small>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <p><strong>ClearPath AI</strong></p>
-        <p>Empowering businesses and clinics through custom AI automation.</p>
-      </div>
-      <div class="footer-right">
-        <div class="footer-links">
-          <a href="#top">Home</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div>United Kingdom · <a href="mailto:edward@clearpathai.uk">edward@clearpathai.uk</a></div>
-        <div style="margin-top:0.2rem;">© <span id="year"></span> ClearPath AI. All rights reserved.</div>
-      </div>
-    </div>
+    <p>© 2025 ClearPath AI — Empowering businesses through custom AI automation.</p>
+    <p>Built and managed by ClearPath AI. Contact: <a href="mailto:edward@clearpathai.uk">edward@clearpathai.uk</a></p>
   </footer>
 
-  <!-- Floating chat button (currently opens email) -->
-  <button class="chat-button" onclick="window.location.href='mailto:edward@clearpathai.uk?subject=Let%27s%20talk%20about%20AI%20automation'">
-    <span>💬</span> <span>Let’s Chat</span>
+  <!-- CHATBOT DEMO WIDGET -->
+  <button class="chat-toggle-btn" id="chatToggle">
+    <span>💬</span>
+    <span>Chat demo</span>
   </button>
 
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <div class="chat-avatar">CP</div>
+        <div>
+          <div class="chat-title">ClearPath AI Assistant</div>
+          <div class="chat-status">Online · demo</div>
+        </div>
+      </div>
+      <button class="chat-close" id="chatClose">×</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message bot">
+        <div class="chat-bubble bot">
+          Hi there 👋 I’m your AI assistant from ClearPath AI.<br>
+          I can answer FAQs, help with bookings, and capture new enquiries 24/7.
+        </div>
+      </div>
+      <div class="chat-message user">
+        <div class="chat-bubble user">
+          Can you help reduce our admin workload?
+        </div>
+      </div>
+      <div class="chat-message bot">
+        <div class="chat-bubble bot">
+          Absolutely. We’ll map your current processes and build a custom assistant to handle common
+          questions & tasks — so your team can focus on patients and high-value work.
+        </div>
+      </div>
+      <div class="chat-message bot">
+        <div class="chat-bubble bot">
+          Want to see what this could look like for your clinic?<br>
+          Click the button below to contact Edward at ClearPath AI.
+        </div>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <small>This is a demo preview. For a real assistant, ClearPath AI connects it to your tools.</small>
+      <button onclick="window.location.href='mailto:edward@clearpathai.uk?subject=AI%20assistant%20enquiry&body=Hi%20Edward,%20I%27d%20like%20to%20learn%20more%20about%20an%20AI%20assistant%20for%20my%20business.'">
+        Contact ClearPath AI
+      </button>
+    </div>
+  </div>
+
   <script>
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Chat widget toggle
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWidget = document.getElementById('chatWidget');
+    const chatClose = document.getElementById('chatClose');
+
+    chatToggle.addEventListener('click', () => {
+      const isVisible = chatWidget.style.display === 'flex';
+      chatWidget.style.display = isVisible ? 'none' : 'flex';
+    });
+
+    chatClose.addEventListener('click', () => {
+      chatWidget.style.display = 'none';
+    });
   </script>
 
 </body>
