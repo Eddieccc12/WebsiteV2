@@ -2,10 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ClearPath AI – Innovative AI Solutions</title>
+  <title>Clear Path AI – AI automation for clinics &amp; beauty businesses</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google Font (optional) -->
+  <!-- SEO -->
+  <meta name="description" content="Clear Path AI helps clinics, medspas, and beauty businesses automate bookings, follow-ups, and client communication with smart, human-like AI assistants.">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Clear Path AI">
+  <meta property="og:description" content="Clear Path AI helps clinics, medspas, and beauty businesses automate bookings, follow-ups, and client communication with smart, human-like AI assistants.">
+  <meta property="og:type" content="website">
+  <!-- Replace URL below with your real domain once it's live -->
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:image" content="favicon.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clear Path AI">
+  <meta name="twitter:description" content="Clear Path AI helps clinics, medspas, and beauty businesses automate bookings, follow-ups, and client communication with smart, human-like AI assistants.">
+  <meta name="twitter:image" content="favicon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,6 +44,11 @@
       line-height: 1.6;
       min-height: 100vh;
       scroll-behavior: smooth;
+
+      /* animated gradient */
+      background-image: radial-gradient(circle at top, #19253b 0%, #05060b 55%, #020308 100%);
+      background-size: 220% 220%;
+      animation: gradientShift 32s ease-in-out infinite;
     }
     img {
       max-width: 100%;
@@ -35,6 +60,12 @@
     }
     ul {
       list-style: none;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
     }
 
     /* =========== LAYOUT HELPERS =========== */
@@ -103,6 +134,7 @@
     .nav-links a:hover::after {
       width: 100%;
     }
+
     .nav-cta {
       border-radius: 999px;
       padding: 0.5rem 1rem;
@@ -121,7 +153,7 @@
     }
     .nav-cta:hover {
       border-color: #4ade80;
-      transform: translateY(-1px);
+      transform: translateY(-1px) scale(1.02);
       box-shadow: 0 12px 35px rgba(22, 163, 74, 0.25);
     }
 
@@ -256,7 +288,7 @@
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
     .btn-primary:hover {
-      transform: translateY(-1px);
+      transform: translateY(-1px) scale(1.02);
       box-shadow: 0 24px 60px rgba(22, 163, 74, 0.6);
     }
     .btn-secondary {
@@ -270,12 +302,13 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      transition: border 0.18s ease, background 0.18s ease, transform 0.18s ease;
+      transition: border 0.18s ease, background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
     }
     .btn-secondary:hover {
       border-color: #4ade80;
       background: rgba(15, 23, 42, 1);
-      transform: translateY(-1px);
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.6);
     }
     .hero-meta {
       margin-top: 1.25rem;
@@ -329,12 +362,6 @@
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
-    }
-    .hero-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: inherit;
     }
     .hero-avatar-meta {
       font-size: 0.78rem;
@@ -415,7 +442,7 @@
       opacity: 0.9;
     }
 
-    /* Features */
+    /* WHY CLEAR PATH AI (unchanged look) */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -464,7 +491,65 @@
       }
     }
 
-    /* How It Works */
+    /* CORE AUTOMATIONS */
+    .automations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+    .automation-card {
+      border-radius: 1.1rem;
+      padding: 1.4rem 1.5rem 1.5rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .automation-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #9ca3af;
+    }
+    .automation-beta {
+      padding: 0.16rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(52, 211, 153, 0.7);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #bbf7d0;
+    }
+    .automation-title {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .automation-body {
+      color: #e5e7eb;
+    }
+    .automation-note {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 1000px) {
+      .automations-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 700px) {
+      .automations-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* HOW IT WORKS */
     .steps {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -571,6 +656,11 @@
       min-height: 120px;
       resize: vertical;
     }
+    .contact-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 0.4rem;
+    }
 
     @media (max-width: 900px) {
       .contact-card {
@@ -616,7 +706,7 @@
       transition: transform 0.18s ease, opacity 0.18s ease, visibility 0.18s ease;
     }
     .chatbot-window.minimized {
-      transform: translateY(12px);
+      transform: translateY(16px);
       opacity: 0;
       visibility: hidden;
     }
@@ -745,6 +835,30 @@
       white-space: nowrap;
     }
 
+    .chatbot-quick-actions {
+      padding: 0.4rem 0.75rem 0.6rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      background: rgba(15, 23, 42, 0.98);
+    }
+    .chatbot-quick-btn {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: rgba(15, 23, 42, 1);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.78rem;
+      color: #e5e7eb;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .chatbot-quick-btn:hover {
+      background: rgba(31, 41, 55, 1);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.7);
+    }
+
     /* Chat toggle button */
     .chatbot-toggle {
       border-radius: 999px;
@@ -758,6 +872,7 @@
       cursor: pointer;
       font-size: 0.85rem;
       box-shadow: 0 16px 45px rgba(15, 23, 42, 0.95);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
     .chatbot-toggle-dot {
       width: 7px;
@@ -765,6 +880,29 @@
       border-radius: 999px;
       background: #22c55e;
       box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.35);
+    }
+    .chatbot-toggle:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 20px 55px rgba(15, 23, 42, 0.95);
+    }
+
+    @keyframes chatPulse {
+      0% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 16px 45px rgba(15, 23, 42, 0.95);
+      }
+      50% {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 24px 65px rgba(15, 23, 42, 1);
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 16px 45px rgba(15, 23, 42, 0.95);
+      }
+    }
+
+    .chatbot.collapsed .chatbot-toggle {
+      animation: chatPulse 3.2s ease-in-out infinite;
     }
 
     @media (max-width: 600px) {
@@ -784,7 +922,7 @@
   <header class="navbar">
     <div class="container nav-inner">
       <div class="nav-logo">
-        ClearPath <span>AI</span>
+        Clear Path <span>AI</span>
       </div>
 
       <nav>
@@ -825,7 +963,7 @@
           </div>
 
           <div class="hero-actions">
-            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            <button class="btn-primary" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">
               See how it works →
             </button>
             <button class="btn-secondary" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">
@@ -844,7 +982,6 @@
               <div>
                 <div class="hero-avatar-row">
                   <div class="hero-avatar">
-                    <!-- You can replace this with an <img src="your-image.jpg"> -->
                     🤖
                   </div>
                   <div class="hero-avatar-meta">
@@ -859,8 +996,8 @@
                     <strong>72%</strong> of inbound questions resolved instantly.
                   </div>
                   <p>
-                    “Hi Maya, based on your symptoms I recommend booking a same-day call. Would you like
-                    me to find the next available slot?”
+                    “Hi Maya, based on your symptoms I recommend booking a same-day call. Would you like me to find
+                    the next available slot?”
                   </p>
                 </div>
               </div>
@@ -876,15 +1013,15 @@
       </div>
     </section>
 
-    <!-- =========== FEATURES =========== -->
+    <!-- =========== WHY CLEAR PATH AI (unchanged content) =========== -->
     <section id="features">
       <div class="container">
         <div class="section-header">
-          <p class="section-kicker">Why ClearPath AI</p>
+          <p class="section-kicker">Why Clear Path AI</p>
           <h2 class="section-title">Built for high-stakes conversations.</h2>
           <p class="section-subtitle">
-            From first contact to follow-up, our chatbots are tuned for safety, clarity and speed —
-            so your team stays focused on the work only humans can do.
+            From first contact to follow-up, our chatbots are tuned for safety, clarity and speed — so your team stays
+            focused on the work only humans can do.
           </p>
         </div>
 
@@ -928,46 +1065,143 @@
       </div>
     </section>
 
-    <!-- =========== HOW IT WORKS =========== -->
-    <section id="how-it-works">
+    <!-- =========== CORE AUTOMATIONS =========== -->
+    <section id="automations">
       <div class="container">
         <div class="section-header">
-          <p class="section-kicker">How it works</p>
-          <h2 class="section-title">From idea to live chatbot in three steps.</h2>
+          <p class="section-kicker">Automation suite</p>
+          <h2 class="section-title">AI tools built for clinics and beauty businesses.</h2>
+          <p class="section-subtitle">
+            Start with a single assistant or combine multiple automations into one smooth client journey — from first
+            enquiry to post-visit follow-up.
+          </p>
         </div>
 
-        <div class="steps">
-          <article class="step">
-            <p class="step-index">Step 01</p>
-            <h3 class="step-title">Map your conversations</h3>
-            <p>
-              We identify your highest-volume patient or customer questions and the safe,
-              approved answers you already use.
+        <div class="automations-grid">
+          <article class="automation-card">
+            <div class="automation-label-row">
+              <span>AI Chatbot</span>
+            </div>
+            <h3 class="automation-title">Your 24/7 front desk.</h3>
+            <p class="automation-body">
+              ClinicCare Assist handles FAQs, pricing questions, and new enquiries around the clock — giving every
+              visitor a fast, friendly response while collecting qualified leads for your team.
             </p>
           </article>
 
-          <article class="step">
-            <p class="step-index">Step 02</p>
-            <h3 class="step-title">Train & test safely</h3>
-            <p>
-              Your chatbot learns from your content only. We run red-team tests and refine until
-              you’re confident to go live.
+          <article class="automation-card">
+            <div class="automation-label-row">
+              <span>Appointment scheduler</span>
+            </div>
+            <h3 class="automation-title">Book more appointments with less admin.</h3>
+            <p class="automation-body">
+              Clients can schedule or reschedule in seconds through the chatbot or website widget. Automatic reminders
+              reduce no-shows and keep your calendar full — without endless phone calls.
             </p>
           </article>
 
-          <article class="step">
-            <p class="step-index">Step 03</p>
-            <h3 class="step-title">Launch & monitor</h3>
-            <p>
-              Add a single script to your site, launch in days, and track deflection rates, CSAT and
-              handoff volume in your dashboard.
+          <article class="automation-card">
+            <div class="automation-label-row">
+              <span>Post-procedure bot</span>
+            </div>
+            <h3 class="automation-title">Stay connected after every visit.</h3>
+            <p class="automation-body">
+              Automatically check in with patients after treatments or surgeries. Share care instructions, gather
+              feedback, and flag anyone who needs extra attention — all in your clinic’s tone of voice.
+            </p>
+          </article>
+
+          <article class="automation-card">
+            <div class="automation-label-row">
+              <span>Workflow automations</span>
+            </div>
+            <h3 class="automation-title">Let your systems do the busywork.</h3>
+            <p class="automation-body">
+              From sending confirmation emails to updating your CRM, we automate repetitive admin tasks so your team can
+              focus on what actually matters — patient care and client experience.
+            </p>
+          </article>
+
+          <article class="automation-card">
+            <div class="automation-label-row">
+              <span>AI receptionist</span>
+              <span class="automation-beta">Beta</span>
+            </div>
+            <h3 class="automation-title">Answer every call — even after hours.</h3>
+            <p class="automation-body">
+              Our upcoming AI receptionist uses natural speech to greet callers, handle simple questions, and route
+              calls to the right person. Ideal for busy clinics with high call volume or limited front-desk capacity.
+            </p>
+            <p class="automation-note">
+              Currently in beta — ask about early access on your demo call.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- =========== FAQ =========== -->
+    <!-- =========== HOW IT WORKS (new) =========== -->
+    <section id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">How it works</p>
+          <h2 class="section-title">From idea to live assistant in five steps.</h2>
+          <p class="section-subtitle">
+            A simple, guided process that takes you from “we’re curious about AI” to “our clients are actually using
+            this every day.”
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <p class="step-index">Step 01</p>
+            <h3 class="step-title">Discovery &amp; planning</h3>
+            <p>
+              We start with a short call to understand your clinic, pain points, and goals. Together we choose which
+              automation will bring the fastest results.
+            </p>
+          </article>
+
+          <article class="step">
+            <p class="step-index">Step 02</p>
+            <h3 class="step-title">Setup &amp; integration</h3>
+            <p>
+              We use your existing FAQs, scripts, or booking links to build your assistant and connect it to your
+              current tools — no complex tech work on your side.
+            </p>
+          </article>
+
+          <article class="step">
+            <p class="step-index">Step 03</p>
+            <h3 class="step-title">Testing &amp; approval</h3>
+            <p>
+              You see every conversation flow before anything goes live. We tune the tone, answers, and safety rules
+              until it feels exactly right.
+            </p>
+          </article>
+
+          <article class="step">
+            <p class="step-index">Step 04</p>
+            <h3 class="step-title">Launch &amp; monitor</h3>
+            <p>
+              We switch your assistant on, monitor early conversations, and help your team get comfortable using and
+              reviewing the new workflows.
+            </p>
+          </article>
+
+          <article class="step">
+            <p class="step-index">Step 05</p>
+            <h3 class="step-title">Ongoing optimisation</h3>
+            <p>
+              As your clinic grows, we expand your automations — new procedures, new locations, and new channels like
+              WhatsApp or phone reception.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== FAQ (new content) =========== -->
     <section id="faq">
       <div class="container faq-grid">
         <div>
@@ -975,28 +1209,51 @@
             <p class="section-kicker">FAQ</p>
             <h2 class="section-title">Answers to common questions.</h2>
             <p class="section-subtitle">
-              Don’t see what you need? Use the assistant in the corner or drop us a message and we’ll get back within one business day.
+              Don’t see what you need? Use the assistant in the corner or send us a message — we’ll reply within one
+              business day.
             </p>
           </div>
         </div>
 
         <div>
           <div class="faq-item">
-            <p class="faq-q">Is this demo chatbot real?</p>
+            <p class="faq-q">How long does setup take?</p>
             <p class="faq-a">
-              On this page it’s a front-end demo only — ideal for prototypes or portfolios hosted on GitHub Pages.
+              Most clinics are live within 5–10 business days. We start with your existing FAQs, website content or
+              booking system, then build and test your assistant before launch.
             </p>
           </div>
+
           <div class="faq-item">
-            <p class="faq-q">Does the chatbot store any personal data?</p>
+            <p class="faq-q">How do you handle privacy and data?</p>
             <p class="faq-a">
-              This example runs entirely in your browser and does not send data anywhere. In production you’d connect to your own backend.
+              We take client privacy seriously. All automations are built under clear client agreements, and we only
+              access or process the information needed to make your system work. No data is shared externally.
             </p>
           </div>
+
           <div class="faq-item">
-            <p class="faq-q">Can I customise the look &amp; feel?</p>
+            <p class="faq-q">What systems can you connect to?</p>
             <p class="faq-a">
-              Absolutely. Tweak the colours, fonts and copy directly in <code>index.html</code> — no build step required.
+              We can integrate with most booking or communication platforms — including Calendly, Google Calendar,
+              Cliniko, Pabau, and other scheduling or CRM tools. If your system isn’t listed, we’ll explore a custom
+              option.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">Can I customise how the AI speaks to clients?</p>
+            <p class="faq-a">
+              Yes. Every assistant is tailored to your clinic’s tone of voice — professional, friendly, or luxury —
+              so it feels like an extension of your team, not a generic bot.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-q">How much does it cost?</p>
+            <p class="faq-a">
+              Prices vary depending on your business size, setup requirements, and the complexity of your automations.
+              After a short demo call, we’ll provide a clear quote before any work begins.
             </p>
           </div>
         </div>
@@ -1008,30 +1265,42 @@
       <div class="container">
         <div class="contact-card">
           <div class="contact-text">
-            <h2 class="section-title">Ready to see it in action?</h2>
+            <h2 class="section-title">Ready to automate your clinic?</h2>
             <p>
-              Share a bit about your team and the workflows you’d like to automate. We’ll follow up with a short Loom demo
-              tailored to your use-case.
+              Tell us a bit about your business and which tasks take up most of your team’s time. We’ll reply within
+              one business day with a personalised demo or a call time that suits you.
             </p>
             <p class="contact-meta">
-              This form is for demo purposes only on GitHub Pages. In production, connect it to your own backend or form tool.
+              We’ll never share your details. All demos are private and tailored to your business.
             </p>
           </div>
 
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('Demo only – connect to a backend for real submissions.');">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/mldaeagn" method="POST">
             <div>
               <label class="field-label" for="name">Name</label>
-              <input class="field" id="name" type="text" placeholder="Alex Rivera" />
+              <input class="field" id="name" name="name" type="text" placeholder="Your full name" required />
+            </div>
+            <div>
+              <label class="field-label" for="clinic">Clinic / Business name</label>
+              <input class="field" id="clinic" name="clinic" type="text" placeholder="e.g. Smile Dental, Luxe Aesthetics" />
             </div>
             <div>
               <label class="field-label" for="email">Work email</label>
-              <input class="field" id="email" type="email" placeholder="you@company.com" />
+              <input class="field" id="email" name="email" type="email" placeholder="you@clinic.com" required />
             </div>
             <div>
-              <label class="field-label" for="message">What would you like to automate?</label>
-              <textarea class="field" id="message" placeholder="e.g. triaging patient FAQs, routing messages, onboarding…"></textarea>
+              <label class="field-label" for="message">What would you like to automate first?</label>
+              <textarea
+                class="field"
+                id="message"
+                name="message"
+                placeholder="e.g. appointment scheduling, post-procedure check-ins, patient FAQs…"
+                required
+              ></textarea>
             </div>
-            <button class="btn-primary" type="submit">Send request →</button>
+
+            <button class="btn-primary" type="submit">Book a free demo →</button>
+            <p class="contact-note" id="contactStatus"></p>
           </form>
         </div>
       </div>
@@ -1041,20 +1310,20 @@
   <!-- =========== FOOTER =========== -->
   <footer>
     <div class="container footer-inner">
-      <span>© <span id="year"></span> ClearPath AI. All rights reserved.</span>
-      <span>Prototype built for GitHub Pages.</span>
+      <span>© <span id="year"></span> Clear Path AI. All rights reserved.</span>
+      <span>Prototype built and hosted on GitHub Pages.</span>
     </div>
   </footer>
 
   <!-- =========== CHATBOT WIDGET =========== -->
-  <div class="chatbot" aria-live="polite">
-    <div class="chatbot-window" id="chatbotWindow">
+  <div class="chatbot collapsed" aria-live="polite">
+    <div class="chatbot-window minimized" id="chatbotWindow">
       <div class="chatbot-header">
         <div class="chatbot-header-left">
           <div class="chatbot-avatar">💬</div>
           <div class="chatbot-name">
-            <strong>ClearPath Assistant</strong>
-            <span>Demo chatbot</span>
+            <strong>ClinicCare Assist</strong>
+            <span>Demo assistant</span>
           </div>
         </div>
         <div class="chatbot-controls">
@@ -1062,22 +1331,16 @@
         </div>
       </div>
 
-      <div class="chatbot-messages" id="chatMessages">
-        <div class="chat-msg bot">
-          <div class="chat-meta">Bot · just now</div>
-          <p>Hi! I’m a demo chatbot running only in your browser. Ask me about this page or click quick questions below.</p>
-        </div>
-        <div class="chat-msg bot">
-          <p>Try: “What does this website do?” or “How fast is setup?”</p>
-        </div>
-      </div>
+      <div class="chatbot-messages" id="chatMessages"></div>
+
+      <div class="chatbot-quick-actions" id="chatQuick"></div>
 
       <form class="chatbot-input-area" id="chatForm">
         <textarea
           class="chatbot-input"
           id="chatInput"
           rows="1"
-          placeholder="Type a message…"
+          placeholder="Type a message… (demo only)"
         ></textarea>
         <button class="chatbot-send" type="submit">
           Send →
@@ -1087,7 +1350,7 @@
 
     <button class="chatbot-toggle" id="chatToggle">
       <div class="chatbot-toggle-dot"></div>
-      <span>Let’s chat</span>
+      <span>Chat with ClinicCare Assist</span>
     </button>
   </div>
 
@@ -1108,38 +1371,77 @@
       });
     });
 
-    // Chatbot logic (fake, front-end only)
+    // Contact form (Formspree async)
+    const contactForm = document.getElementById("contactForm");
+    const contactStatus = document.getElementById("contactStatus");
+
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      contactStatus.textContent = "Sending…";
+
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          contactStatus.textContent = "Thank you — we’ll be in touch within one business day.";
+          contactForm.reset();
+        } else {
+          contactStatus.textContent = "Something went wrong. Please try again, or email us directly.";
+        }
+      } catch (err) {
+        contactStatus.textContent = "Network error. Please try again in a moment.";
+      }
+    });
+
+    // Chatbot logic (demo only)
+    const chatRoot = document.querySelector(".chatbot");
     const chatWindow = document.getElementById("chatbotWindow");
     const chatToggle = document.getElementById("chatToggle");
     const chatMinimize = document.getElementById("chatMinimize");
     const chatMessages = document.getElementById("chatMessages");
     const chatForm = document.getElementById("chatForm");
     const chatInput = document.getElementById("chatInput");
+    const chatQuick = document.getElementById("chatQuick");
+
+    let chatFlowStep = "root";
+    const bookingState = {};
 
     function toggleChat(open) {
       if (open) {
         chatWindow.classList.remove("minimized");
+        chatRoot.classList.remove("collapsed");
       } else {
         chatWindow.classList.add("minimized");
+        chatRoot.classList.add("collapsed");
       }
     }
 
     chatToggle.addEventListener("click", () => {
       const minimized = chatWindow.classList.contains("minimized");
       toggleChat(minimized);
+      if (minimized) {
+        resetDemo();
+      }
     });
 
     chatMinimize.addEventListener("click", () => {
       toggleChat(false);
     });
 
-    function addMessage(text, sender = "user") {
+    function addMessage(text, sender = "user", withMeta = false) {
       const msg = document.createElement("div");
       msg.classList.add("chat-msg", sender);
-      if (sender === "bot") {
+      if (sender === "bot" && withMeta) {
         const meta = document.createElement("div");
         meta.classList.add("chat-meta");
-        meta.textContent = "Bot · just now";
+        meta.textContent = "ClinicCare Assist · just now";
         msg.appendChild(meta);
       }
       const p = document.createElement("p");
@@ -1149,23 +1451,184 @@
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    function fakeBotReply(userText) {
-      const lower = userText.toLowerCase();
-      let reply;
+    function setQuickReplies(options) {
+      chatQuick.innerHTML = "";
+      options.forEach((opt) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "chatbot-quick-btn";
+        btn.textContent = opt.label;
+        btn.addEventListener("click", () => {
+          addMessage(opt.label, "user");
+          opt.onClick();
+        });
+        chatQuick.appendChild(btn);
+      });
+    }
 
-      if (lower.includes("what") && lower.includes("website")) {
-        reply = "This page is a sample landing site for an AI chatbot service, built as a static GitHub Pages demo.";
-      } else if (lower.includes("setup") || lower.includes("onboard")) {
-        reply = "In this demo we say setup takes just a few days once we have your FAQs and workflows.";
-      } else if (lower.includes("real") || lower.includes("backend")) {
-        reply = "Here, I’m 100% front-end only. In a real product you would connect this widget to your own API.";
-      } else if (lower.includes("contact")) {
-        reply = "You can fill in the contact form below, or replace it with your own form handler when you deploy this.";
-      } else {
-        reply = "Nice question! Since this is a static demo, I’m using a few canned responses. Edit the JavaScript in index.html to customize how I reply.";
+    function resetDemo() {
+      chatMessages.innerHTML = "";
+      Object.keys(bookingState).forEach((k) => delete bookingState[k]);
+      chatFlowStep = "root";
+
+      addMessage(
+        "Hi, I’m ClinicCare Assist — a demo virtual assistant. I can show you how we handle bookings and common questions for clinics.",
+        "bot",
+        true
+      );
+      addMessage("This is a demo only and not medical advice. To try it out, pick an option below.", "bot");
+
+      setQuickReplies([
+        {
+          label: "Book an appointment (demo)",
+          onClick: startBookingDemo,
+        },
+        {
+          label: "Ask a quick question",
+          onClick: quickQuestionInfo,
+        },
+        {
+          label: "See what we can automate",
+          onClick: automationInfo,
+        },
+      ]);
+    }
+
+    function startBookingDemo() {
+      chatFlowStep = "booking_clinic";
+      addMessage(
+        "Great, let’s walk through how a client could book an appointment with your clinic. First, what type of clinic should we pretend this is?",
+        "bot",
+        true
+      );
+      setQuickReplies([
+        { label: "Dental clinic", onClick: () => chooseClinicType("Dental clinic") },
+        { label: "Aesthetic / cosmetic clinic", onClick: () => chooseClinicType("Aesthetic / cosmetic clinic") },
+        { label: "Vet clinic", onClick: () => chooseClinicType("Vet clinic") },
+        { label: "Hair / beauty clinic", onClick: () => chooseClinicType("Hair / beauty clinic") },
+      ]);
+    }
+
+    function chooseClinicType(type) {
+      bookingState.clinicType = type;
+      chatFlowStep = "booking_reason";
+      addMessage(`Perfect — we’ll use a ${type.toLowerCase()} as an example.`, "bot", true);
+      addMessage("What would you like to book?", "bot");
+      setQuickReplies([
+        { label: "New patient consultation", onClick: () => chooseReason("New patient consultation") },
+        { label: "Check-up / follow-up", onClick: () => chooseReason("Check-up / follow-up") },
+        { label: "Treatment or procedure", onClick: () => chooseReason("Treatment or procedure") },
+      ]);
+    }
+
+    function chooseReason(reason) {
+      bookingState.reason = reason;
+      chatFlowStep = "booking_time";
+      addMessage("Got it. In a real clinic, I’d now check your diary.", "bot", true);
+      addMessage("For this demo, choose a time that would work for your patient:", "bot");
+      setQuickReplies([
+        { label: "Tomorrow morning", onClick: () => chooseTime("Tomorrow morning") },
+        { label: "This week", onClick: () => chooseTime("This week") },
+        { label: "Next week", onClick: () => chooseTime("Next week") },
+      ]);
+    }
+
+    function chooseTime(timeChoice) {
+      bookingState.time = timeChoice;
+      chatFlowStep = "booking_contact";
+      addMessage(`Thanks! I’ll treat "${timeChoice}" as the preferred time.`, "bot", true);
+      addMessage("Next, how should the clinic follow up with this person?", "bot");
+      setQuickReplies([
+        { label: "Call them", onClick: () => chooseContact("Phone call") },
+        { label: "Email them", onClick: () => chooseContact("Email") },
+        { label: "WhatsApp / SMS", onClick: () => chooseContact("WhatsApp / SMS") },
+      ]);
+    }
+
+    function chooseContact(method) {
+      bookingState.contact = method;
+      chatFlowStep = "booking_summary";
+
+      addMessage("Great. In a real assistant, I’d now ask for their name and contact details and save everything to your system.", "bot", true);
+
+      const summaryLines = [
+        "Here’s how a demo booking could look:",
+        "",
+        "Demo booking summary",
+        `• Clinic: ${bookingState.clinicType}`,
+        `• Reason: ${bookingState.reason}`,
+        `• Preferred time: ${bookingState.time}`,
+        `• Contact via: ${bookingState.contact}`,
+        "",
+        "In a real setup, this would be sent straight to your reception team or booking system."
+      ];
+      addMessage(summaryLines.join("\n"), "bot");
+
+      addMessage(
+        "This is just the front-end demo. If you’d like us to connect this to your real calendar or booking system, you can book a quick call:",
+        "bot"
+      );
+
+      setQuickReplies([
+        { label: "Book a real demo", onClick: goToContactFromChat },
+        { label: "Restart demo", onClick: resetDemo },
+      ]);
+    }
+
+    function quickQuestionInfo() {
+      addMessage(
+        "In a live setup, your clients could ask questions like “What are your prices?”, “Where are you based?”, or “Do you accept new patients?”.",
+        "bot",
+        true
+      );
+      addMessage(
+        "Here on the demo, I’m using pre-written answers. Try typing a simple question about opening hours or treatments.",
+        "bot"
+      );
+      setQuickReplies([]);
+      chatFlowStep = "quick_question";
+    }
+
+    function automationInfo() {
+      addMessage(
+        "For most clinics we start by automating website FAQs and lead capture, appointment requests and reminders, post-procedure check-ins and simple admin tasks.",
+        "bot",
+        true
+      );
+      addMessage(
+        "Everything is customised to your tone of voice and safety rules.",
+        "bot"
+      );
+      setQuickReplies([
+        { label: "Book a real demo", onClick: goToContactFromChat },
+        { label: "Restart demo", onClick: resetDemo },
+      ]);
+      chatFlowStep = "automation_info";
+    }
+
+    function goToContactFromChat() {
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+      toggleChat(false);
+    }
+
+    function handleUserText(text) {
+      const lower = text.toLowerCase();
+
+      let reply =
+        "Nice question. In a real assistant I’d use your clinic’s FAQs and policies to answer this exactly. On this demo, imagine I’m pulling a safe, approved answer from your own information.";
+
+      if (lower.includes("hours") || lower.includes("open") || lower.includes("opening")) {
+        reply =
+          "In a real setup I’d respond with your exact opening hours for each day and location, pulled directly from your website or booking system.";
+      } else if (lower.includes("price") || lower.includes("cost")) {
+        reply =
+          "For pricing questions, the assistant can either give guideline prices or share a link to your pricing page, depending on your preferences.";
+      } else if (lower.includes("where") || lower.includes("location") || lower.includes("address")) {
+        reply =
+          "Location questions are easy — the assistant can send your address, map link, parking details and directions in one message.";
       }
 
-      setTimeout(() => addMessage(reply, "bot"), 500);
+      addMessage(reply, "bot", true);
     }
 
     chatForm.addEventListener("submit", (e) => {
@@ -1174,15 +1637,23 @@
       if (!text) return;
       addMessage(text, "user");
       chatInput.value = "";
-      fakeBotReply(text);
+      handleUserText(text);
     });
 
-    // Start minimized on mobile, open on desktop
+    // Start collapsed on mobile, open with demo on desktop
     if (window.innerWidth < 640) {
       toggleChat(false);
+    } else {
+      toggleChat(true);
+      resetDemo();
     }
+
+    window.addEventListener("resize", () => {
+      // If resized from mobile to desktop while collapsed, keep behaviour simple
+      if (window.innerWidth >= 640 && chatWindow.classList.contains("minimized")) {
+        // leave collapsed until user opens it
+      }
+    });
   </script>
 </body>
 </html>
-
-
